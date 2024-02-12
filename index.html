@@ -1,17 +1,52 @@
+<!DOCTYPE html>
 <html>
-	<body>
-	<div class="scene">
-	<div id="plant" class="item"></div>
-	<div id="mirror">
-		<div id="mirror-content"></div>
-	</div>
-	<div id="plant-2" class="item"></div>
-	<div id="books" class="item">
-		<div id="apple" class="item"></div>
-	</div>
-	<div id="plant-3" class="item"></div>
-	<div id="clock" class="item"></div>
-</div>
+<head>
+         <title>Displaying Clock</title>
+         <style  type= "text/css">
+          #clock  {
+                 width:  200px;
+                
+                  text-align:  center;
+                  font-size : 40px;
+            }
+           </style>
+</head>
+<body>
+<div  id="clock"></div>
+<script   type="text/javascript">
+       setInterval( displayclock,  500 );
+          function  displayclock  ()  {
+                  var  time = new Date();
+                  var  hrs = time . getHours();
+                  var  min = time . getMinutes();
+                  var   sec = time . getSeconds();
+                 
+                  if    (hrs > 12) {
+                          hrs = hrs  -  12;
+                   } 
+                   
+                  if  (hrs == 0)  {
+                        hrs = 12;
+                  }
+                  if  (hrs < 10)  {
+                        hrs = '0'  +  hrs;
+                  }
 
-	</body>
+                   if  (min < 10)  {
+                         min = '0'  +  min;
+                  }
+
+                    if  (sec < 10)  {
+                        sec = '0'  +  sec;
+                  }
+                 
+                 document . getElementById('clock') . innerHTML  =  hrs  +  ' : '  +  min  +  ' : '  +  sec ;   
+
+
+
+ }
+
+
+</script>
+</body>
 </html>
